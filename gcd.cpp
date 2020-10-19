@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int gcd(int a,int b)
+long long int gcd(long long int a,long long int b)
 {
     if(b==0)
     {
@@ -17,10 +17,8 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    cout<<gcd(12,18);
-
-
-
+    long long int a,b;
+    cin>>a>>b;
+    cout<<gcd(a,b)<<endl;
     return 0;
 }
-
