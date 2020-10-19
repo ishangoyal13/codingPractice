@@ -1,14 +1,11 @@
-include <iostream>
+#include <iostream>
 #include <math.h>
 using namespace std;
 
-#define MAX 100
-
+long long int a[10000000];
 // Function to print prime numbers in the range of a given number n
-void SieveOfEratosthenes(int n)
+void SieveOfEratosthenes(long long int n)
 {
-	int a[MAX];
-
 	for (int i = 0; i <= n; i++) // initialize all numbers as prime
 		a[i] = 1;
 
@@ -23,11 +20,15 @@ void SieveOfEratosthenes(int n)
 
 	for (int i = 2; i <= n; i++)
 		if (a[i] == 1)
+		{
 			cout << i << " "; // prints primes
+		}
 }
 
 int main()
 {
-	// print primes less than 100
-	SieveOfEratosthenes(100);
+	// print primes less than 10000001
+	long long int n;
+	cin>>n;
+	SieveOfEratosthenes(n);
 }
