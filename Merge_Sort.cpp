@@ -56,7 +56,7 @@ void sortMerge(int arr[], int st, int ed)
 {
     if (st == ed)
         return;
-    int mid  = (st+ed)/2;
+    int mid  = st+(ed-st)/2;
     sortMerge(arr, st, mid);
     sortMerge(arr, mid+1, ed);
     mergeList(arr, st, mid, ed);
