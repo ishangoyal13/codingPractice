@@ -2,6 +2,7 @@
 Quick Sort
 */
 #include<iostream>
+#include <cstdlib>
 using namespace std;
 
 void display(int size, int arr[])
@@ -21,7 +22,11 @@ void swap(int *a, int *b)
 
 int pivotPosition(int arr[], int st, int ed)
 {
+     srand(time(NULL));
+    int random = st + rand() % (ed - st+1);
+    swap(arr[random],arr[ed]);
     int pivElement = arr[ed];
+    
     int pivIndex = st;
     for (int i = st; i < ed; i++)
     {
