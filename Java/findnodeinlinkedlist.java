@@ -11,31 +11,22 @@ class LinkedListNode<T> {
     }
 }
 
-public class Solution
-{
-    public static LinkedListNode<Integer> deleteNode(LinkedListNode<Integer> head, int i)
-    {
-        if(head==null )
-            return head;
-        if(i==0)
-            return head.next;
-        int count=0;
-        LinkedListNode<Integer> temp=head;
-        while(temp!=null && count<i-1)
+
+public class Solution {
+	public static int findNode(LinkedListNode<Integer> head, int n) {
+		// Write your code here.
+        int c=0;
+        while(head!=null)
         {
-            temp=temp.next;
-            count++;
+            if(head.data == n)
+                return c;
+            else
+                c++;
+            head = head.next;
         }
-        if(temp==null)
-            return head;
-        if(temp.next!=null)
-            temp.next=temp.next.next;
-
-
-        return head;
-    }
+        return -1;
+	}
 }
-
 
 public class Runner {
     
@@ -58,13 +49,14 @@ public class Runner {
                 tail.next = newNode;
                 tail = newNode;
             }
+
             i += 1;
         }
 
         return head;
     }
     
-    public static void print(LinkedListNode<Integer> head){
+    public static void print(LinkedListNode<Integer> head) {
         while(head != null) {
             System.out.print(head.data + " ");
             head = head.next;
@@ -77,13 +69,14 @@ public class Runner {
         int t = Integer.parseInt(br.readLine().trim());
 
         while (t > 0) {
-            LinkedListNode<Integer> head = takeInput(); 
 
-            int pos = Integer.parseInt(br.readLine().trim());
-            head = Solution.deleteNode(head, pos);
-            print(head);
+            LinkedListNode<Integer> head = takeInput(); 
+            int n = Integer.parseInt(br.readLine().trim());
+            
+            System.out.println(Solution.findNode(head, n));
 
             t -= 1;
         }
+        
     }
 }
